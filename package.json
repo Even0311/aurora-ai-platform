@@ -1,0 +1,11 @@
+{
+  "name": "aurora-ai-platform",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Aurora AI Platform",
+  "scripts": {
+    "dev": "echo workspace root",
+    "build": "echo build root"
+  },
+  "packageManager": "pnpm@10.30.3"
+}
