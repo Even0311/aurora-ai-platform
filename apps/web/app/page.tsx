@@ -1,12 +1,9 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { sendMessage } from "@/lib/api";
+import { sendMessage, ChatMessage } from "@/lib/api";
 
-interface Message {
-  role: "user" | "assistant";
-  content: string;
-}
+type Message = ChatMessage;
 
 export default function Home() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -29,7 +26,7 @@ export default function Home() {
     setLoading(true);
 
     try {
-      const data = await sendMessage(text);
+      const data = await sendMessage(text, messages);
       setMessages((prev) => [...prev, { role: "assistant", content: data.reply }]);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");

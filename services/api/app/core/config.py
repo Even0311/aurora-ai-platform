@@ -6,6 +6,8 @@ class Settings(BaseSettings):
     app_name: str = "Aurora API"
     app_env: str = "dev"
     api_prefix: str = "/api/v1"
+    openai_api_key: str = ""
+    openai_model: str = "gpt-4o-mini"
     cors_origins: List[str] = [
         "http://localhost:3000",
         "http://localhost:3001",
